@@ -1,11 +1,3 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.templating import Jinja2Templates
-import os
-
-app = FastAPI(title="WorldGlass API", version="1.0.0")
-
 # Montar archivos estáticos (solo si el directorio existe)
 if os.path.isdir("static"):
     app.mount("/static", StaticFiles(directory="static"), name="static")
